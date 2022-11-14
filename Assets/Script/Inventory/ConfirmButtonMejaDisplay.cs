@@ -26,7 +26,6 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
         }
         if (nomorMeja.Equals(2))
         {
-            tampil = GameObject.Find("MejaAtasKiriDisplay");
             tampil = GameObject.Find("MejaAtasKananDisplay");
         }
 

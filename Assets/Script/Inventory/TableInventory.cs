@@ -8,7 +8,6 @@ public class TableInventory : MonoBehaviour
     private Inventory inventory;
     public RectTransform UI_InventoryActive;
     public GameObject UI_playerInventory;
-    private GameObject[] clone;
 
     public void ChangeImage(string jeneng, int itemIndex)
     {

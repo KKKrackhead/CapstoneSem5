@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private UI_Inventory uiInventory;
     [SerializeField] private ConfirmButtonMejaDisplay confirmButton;
 
-    private void Awake()
     /*private void Awake()
     {
         inventory = new Inventory();
