@@ -27,11 +27,14 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
         if (nomorMeja.Equals(2))
         {
             tampil = GameObject.Find("MejaAtasKiriDisplay");
+            tampil = GameObject.Find("MejaAtasKananDisplay");
         }
 
         tampil.GetComponent<TableInventory>().ChangeImage(jeneng, itemIndex);
 
         inventory.RemoveItem(itemIndex);
+
+        tampil.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void setitemIndex(int nomor)

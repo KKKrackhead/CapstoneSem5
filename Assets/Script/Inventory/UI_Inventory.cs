@@ -30,6 +30,7 @@ public class UI_Inventory : MonoBehaviour
             if(child == itemSlotTemplate) continue;
             Destroy(child.gameObject);
         }
+        nomor = 0;
 
         int x = 0;
         float itemSlotCellSize = 170f;
@@ -59,6 +60,7 @@ public class UI_Inventory : MonoBehaviour
 
     public string getJeneng(int nomor)
     {
+        Debug.Log(nomor);
         return inventory.getJeneng(nomor);
     }
 }

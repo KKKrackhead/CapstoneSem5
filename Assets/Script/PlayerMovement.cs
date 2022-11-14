@@ -13,6 +13,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private ConfirmButtonMejaDisplay confirmButton;
 
     private void Awake()
+    /*private void Awake()
+    {
+        inventory = new Inventory();
+        uiInventory.setInventory(inventory);
+        confirmButton.setInventory(inventory);
+    }*/
+
+    private void Start()
     {
         inventory = new Inventory();
         uiInventory.setInventory(inventory);
