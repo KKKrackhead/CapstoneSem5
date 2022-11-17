@@ -10,7 +10,10 @@ public class PlayerMovement : MonoBehaviour
     private Inventory inventory;
 
     [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] private UI_Inventory uiInventory2;
     [SerializeField] private ConfirmButtonMejaDisplay confirmButton;
+    [SerializeField] private Mover move;
+
 
     /*private void Awake()
     {
@@ -23,7 +26,9 @@ public class PlayerMovement : MonoBehaviour
     {
         inventory = new Inventory();
         uiInventory.setInventory(inventory);
+        uiInventory2.setInventory(inventory);
         confirmButton.setInventory(inventory);
+        move.setInventory(inventory);
     }
 
     // Update is called once per frame

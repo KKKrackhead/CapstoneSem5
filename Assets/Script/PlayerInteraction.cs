@@ -6,8 +6,10 @@ public class PlayerInteraction : MonoBehaviour
 {
 
     public RectTransform UI_InventoryActive;
+    public RectTransform UI_Lemari;
 
     private int meja = 0;
+    private int lemari = 0;
     /*
     1 -> meja atas kiri
     2 -> meja atas kanan
@@ -23,6 +25,11 @@ public class PlayerInteraction : MonoBehaviour
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             UI_InventoryActive.anchoredPosition = new Vector3(960f, 540f, 0f);
         }
+        else if (Input.GetKeyDown(KeyCode.E) && lemari != 0)
+        {
+            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+            UI_Lemari.anchoredPosition = new Vector3(960f, 540f, 0f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +42,16 @@ public class PlayerInteraction : MonoBehaviour
         {
             meja = 2;
         }
+        else if (collision.tag.Equals("Lemari"))
+        {
+            lemari = 1;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        meja = 0;
+        lemari = 0;
     }
 
     public int getMeja()
