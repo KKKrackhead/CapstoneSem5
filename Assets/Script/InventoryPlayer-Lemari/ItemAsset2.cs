@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemAsset2 : MonoBehaviour
 {
-   public static ItemAsset2 Instance { get; private set; }
+    public static ItemAsset2 Instance { get; private set; }
 
     private void Awake()
     {

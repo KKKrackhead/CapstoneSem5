@@ -7,6 +7,8 @@ public class UI_Inventory : MonoBehaviour
     private Inventory inventory;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
+    public GameObject mejaDisplay;
+    private Item display;
     private int nomor;
 
     public void setInventory(Inventory inventory)   
@@ -23,9 +25,11 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventoryItems();
     }
 
-    private void RefreshInventoryItems()
+    public void RefreshInventoryItems()
     {
-        foreach(Transform child in itemSlotContainer)
+        Debug.Log("masuk1");
+
+        foreach (Transform child in itemSlotContainer)
         {
             if(child == itemSlotTemplate) continue;
             Destroy(child.gameObject);
@@ -46,6 +50,42 @@ public class UI_Inventory : MonoBehaviour
             nomor++;
             x++;
         }
+
+        if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 1)
+        {
+            Item display = GameObject.Find("MejaAtasKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
+
+            Debug.Log("masuk2");
+            if(display != null)
+            {
+                if (display.getAmount() == 1)
+                {
+                    Debug.Log("masuk3");
+
+                    mejaDisplay.SetActive(true);
+
+                    mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+                }
+            }
+        }
+        else if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 2)
+        {
+            Item display = GameObject.Find("MejaAtasKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
+
+            Debug.Log("masuk2");
+
+            if (display != null)
+            {
+                if (display.getAmount() == 1)
+                {
+                    Debug.Log("masuk3");
+
+                    mejaDisplay.SetActive(true);
+
+                    mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+                }
+            }
+        }
     }
 
     public int getNomor()
@@ -60,7 +100,6 @@ public class UI_Inventory : MonoBehaviour
 
     public string getJeneng(int nomor)
     {
-        Debug.Log(nomor);
         return inventory.getJeneng(nomor);
     }
 }

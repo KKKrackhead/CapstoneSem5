@@ -8,12 +8,25 @@ public class NPC_Spawner : MonoBehaviour
     public Transform SpawnPoint;
     private int randomNPC_Type;
     private bool ea = false;
+    private int jumlahNPC = 0;
+    private GameObject baru;
+    private int jalurNPC;
 
     private void Update()
     {
         if (!ea)
         {
-            StartCoroutine(Waiter());
+            if (jumlahNPC < 5)
+            {
+                if(jumlahNPC == 0)
+                {
+                    StartCoroutine(Waiter());
+                }
+                else if(jalurNPC != 10)
+                {
+                    StartCoroutine(Waiter());
+                }             
+            }
         }
     }
 
@@ -23,12 +36,21 @@ public class NPC_Spawner : MonoBehaviour
 
         randomNPC_Type = Random.Range(0, NPCPrefabs.Length);
 
-        GameObject baru = Instantiate(NPCPrefabs[randomNPC_Type], SpawnPoint.position, transform.rotation);
+        baru = Instantiate(NPCPrefabs[randomNPC_Type], SpawnPoint.position, transform.rotation);
 
         baru.SetActive(true);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
+
+        jumlahNPC += 1;
+
+        jalurNPC = baru.GetComponent<NPC_Movement>().getJalur();
 
         ea = false;
+    }
+
+    public void setJumlahNPC()
+    {
+        jumlahNPC -= 1;
     }
 }

@@ -8,6 +8,15 @@ public class TableInventory : MonoBehaviour
     private Inventory inventory;
     public RectTransform UI_InventoryActive;
     public GameObject UI_playerInventory;
+    private int checkItem = 0;
+
+
+    public void Awake()
+    {
+        Display = new Item(Item.ItemType.Weapon, "Golok", 1);
+        checkItem = 1;
+        gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
+    }
 
     public void ChangeImage(string jeneng, int itemIndex)
     {
@@ -15,8 +24,6 @@ public class TableInventory : MonoBehaviour
         inventory = GameObject.Find("Player").GetComponent<PlayerMovement>().getPlayerInventory();
 
         Display = inventory.getItem(itemIndex);
-
-        Debug.Log(itemIndex + " table");
 
         if (jeneng.Equals("Golok"))
         {
@@ -33,5 +40,27 @@ public class TableInventory : MonoBehaviour
 
         UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+        checkItem = 1;
+    }
+
+    public int getCheckItem()
+    {
+        return checkItem;
+    }
+
+    public Item getItemDisplay()
+    {
+        return Display;
+    }
+
+    public void removeItemDisplay()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        Display = null;
+    }
+
+    public void removeItem()
+    {
+        checkItem = 0;
     }
 }

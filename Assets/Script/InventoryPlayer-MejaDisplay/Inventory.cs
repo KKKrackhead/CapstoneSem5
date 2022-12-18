@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+
+    //inventory player
     public event EventHandler OnItemListChanged;
 
     private List<Item> itemList;
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item) 
     {
         itemList.Add(item);
         OnItemListChanged?.Invoke(this, EventArgs.Empty);

@@ -5,6 +5,7 @@ using System;
 
 public class Inventory2 : MonoBehaviour
 {
+    //inventory lemari
     public event EventHandler OnItemListChanged2;
 
     private List<Item> itemList;

@@ -24,11 +24,13 @@ public class PlayerInteraction : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             UI_InventoryActive.anchoredPosition = new Vector3(960f, 540f, 0f);
+            GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().RefreshInventoryItems();
         }
         else if (Input.GetKeyDown(KeyCode.E) && lemari != 0)
         {
             GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
             UI_Lemari.anchoredPosition = new Vector3(960f, 540f, 0f);
+            GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().RefreshInventoryItems();
         }
     }
 

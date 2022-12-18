@@ -21,6 +21,13 @@ public class Item : MonoBehaviour
         this.amount = amount;
         //this.gambar = gambar;
     }   
+    
+    public Item(Item buy)
+    {
+        this.type = buy.type;
+        this.jeneng = buy.jeneng;
+        this.amount = buy.amount;
+    }
 
    public Sprite GetSprite()
     {
@@ -45,5 +52,10 @@ public class Item : MonoBehaviour
             case "Beras Kencur": return ItemAsset2.Instance.BerasKencur;
 
         }
+    }
+
+    public int getAmount()
+    {
+        return amount;
     }
 }
