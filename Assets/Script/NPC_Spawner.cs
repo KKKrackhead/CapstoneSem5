@@ -16,7 +16,7 @@ public class NPC_Spawner : MonoBehaviour
     {
         if (!ea)
         {
-            if (jumlahNPC < 5)
+            if (jumlahNPC <= 5)
             {
                 if(jumlahNPC == 0)
                 {

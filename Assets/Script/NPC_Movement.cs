@@ -78,7 +78,7 @@ public class NPC_Movement : MonoBehaviour
             buy = new Item(beli);
             displayTable[jalur].GetComponent<TableInventory>().removeItemDisplay();
             kasir = 1;
-            GameObject.Find("ShopCheck").GetComponent<ShopCheck>().setAntrianKasir();
+            GameObject.Find("ShopCheck").GetComponent<ShopCheck>().setAntrianKasir(gameObject);
             //Destroy(gameObject);
         }
     }
@@ -103,15 +103,18 @@ public class NPC_Movement : MonoBehaviour
         }
     }
 
-    private void nentuinJalur()
+    private void nentuinJalur() // cuma baru buat yg meja atas
     {
         checkTableDisplay.Clear();
+
+        List<GameObject> displayTableTemp = new List<GameObject>();
 
         if (checkTableDisplay.Count.Equals(0))
         {
             for (int x = 0; x < displayTable.Count; x++)
             {
                 checkTableDisplay.Add(displayTable[x].GetComponent<TableInventory>().getCheckItem());
+                displayTableTemp.Add(displayTable[x]);
             }
         }
 
@@ -129,19 +132,20 @@ public class NPC_Movement : MonoBehaviour
                 else if (checkTableDisplay[y - 1] == 1)
                 {
                     tanda = 1;
-                    if (displayTable[y - 1].gameObject.name.Equals("MejaAtasKiriDisplay"))
+                    if (displayTableTemp[y - 1].gameObject.name.Equals("MejaAtasKiriDisplay"))
                     {
                         jalur = 1;
                     }
-                    else if (displayTable[y - 1].gameObject.name.Equals("MejaAtasKananDisplay"))
+                    else if (displayTableTemp[y - 1].gameObject.name.Equals("MejaAtasKananDisplay"))
                     {
                         jalur = 0;
                     }
+                    checkTableDisplay.RemoveAt(y - 1);
                 }
                 else
                 {
                     checkTableDisplay.RemoveAt(y - 1);
-                    //displayTable.RemoveAt(y - 1);
+                    displayTableTemp.RemoveAt(y - 1);
                 }
             }
 

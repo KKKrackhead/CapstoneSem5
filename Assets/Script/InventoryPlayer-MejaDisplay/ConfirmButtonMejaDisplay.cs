@@ -17,6 +17,7 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
 
     public void ConfirmButton()
     {
+
         if(itemIndex != 0)
         {
             string jeneng = GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().getJeneng(itemIndex);
@@ -45,6 +46,8 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
 
             UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
         }
+
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
     }
 
     public void setitemIndex(int nomor)

@@ -8,7 +8,7 @@ public class UI_Inventory : MonoBehaviour
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
     public GameObject mejaDisplay;
-    private Item display;
+    private Item display = null;
     private int nomor;
 
     public void setInventory(Inventory inventory)   
@@ -27,8 +27,7 @@ public class UI_Inventory : MonoBehaviour
 
     public void RefreshInventoryItems()
     {
-        Debug.Log("masuk1");
-
+        Debug.Log("masuk");
         foreach (Transform child in itemSlotContainer)
         {
             if(child == itemSlotTemplate) continue;
@@ -53,14 +52,13 @@ public class UI_Inventory : MonoBehaviour
 
         if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 1)
         {
-            Item display = GameObject.Find("MejaAtasKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
+            display = GameObject.Find("MejaAtasKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
 
-            Debug.Log("masuk2");
-            if(display != null)
+            if (display is not null)
             {
-                if (display.getAmount() == 1)
+                if (display.getHarga() != 0)
                 {
-                    Debug.Log("masuk3");
+                    Debug.Log("masuk1");
 
                     mejaDisplay.SetActive(true);
 
@@ -70,16 +68,13 @@ public class UI_Inventory : MonoBehaviour
         }
         else if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 2)
         {
-            Item display = GameObject.Find("MejaAtasKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
+            display = GameObject.Find("MejaAtasKananDisplay").GetComponent<TableInventory>().getItemDisplay();
 
-            Debug.Log("masuk2");
-
-            if (display != null)
+            if (display is not null)
             {
-                if (display.getAmount() == 1)
+                if (display.getHarga() != 0)
                 {
-                    Debug.Log("masuk3");
-
+                    Debug.Log("masuk2");
                     mejaDisplay.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();

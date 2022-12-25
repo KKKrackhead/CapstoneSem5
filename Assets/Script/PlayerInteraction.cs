@@ -9,28 +9,32 @@ public class PlayerInteraction : MonoBehaviour
     public RectTransform UI_Lemari;
 
     private int meja = 0;
-    private int lemari = 0;
     /*
     1 -> meja atas kiri
     2 -> meja atas kanan
     3 -> meja bawah kiri
     4 -> meja bawah kanan
     */
+    private int lemari = 0;
+    private int kasir = 0;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.E) && meja != 0)
         {
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
             UI_InventoryActive.anchoredPosition = new Vector3(960f, 540f, 0f);
             GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().RefreshInventoryItems();
         }
         else if (Input.GetKeyDown(KeyCode.E) && lemari != 0)
         {
-            GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
             UI_Lemari.anchoredPosition = new Vector3(960f, 540f, 0f);
-            GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().RefreshInventoryItems();
+        }
+        else if(Input.GetKeyDown(KeyCode.E) && kasir != 0)
+        {
+            GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
         }
     }
 
@@ -48,12 +52,17 @@ public class PlayerInteraction : MonoBehaviour
         {
             lemari = 1;
         }
+        else if (collision.tag.Equals("Kasir"))
+        {
+            kasir = 1;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         meja = 0;
         lemari = 0;
+        kasir = 0;
     }
 
     public int getMeja()

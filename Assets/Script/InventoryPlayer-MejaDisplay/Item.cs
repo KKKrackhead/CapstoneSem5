@@ -9,24 +9,22 @@ public class Item : MonoBehaviour
         Weapon, Potion, Ingredient
     }
 
-    public ItemType type;
-    public string jeneng; // nama item
-    public int amount;
-    //private SpriteRenderer gambar;
+    private ItemType type;
+    private string jeneng; // nama item
+    private int harga;
 
-    public Item(ItemType type, string jeneng, int amount /*,SpriteRenderer gambar*/)
+    public Item(ItemType type, string jeneng, int harga)
     {
         this.type = type;
         this.jeneng = jeneng;
-        this.amount = amount;
-        //this.gambar = gambar;
+        this.harga = harga;
     }   
     
     public Item(Item buy)
     {
         this.type = buy.type;
         this.jeneng = buy.jeneng;
-        this.amount = buy.amount;
+        this.harga = buy.harga;
     }
 
    public Sprite GetSprite()
@@ -36,9 +34,8 @@ public class Item : MonoBehaviour
             default:
 
             case "Golok": return ItemAssets.Instance.Golok;
-            case "Gula Aren": return ItemAssets.Instance.GulaAren;
+            case "Asem Jawa": return ItemAssets.Instance.AsemJawa;
             case "Beras Kencur": return ItemAssets.Instance.BerasKencur;
-
         }
     }
     public Sprite GetSprite2()
@@ -48,14 +45,18 @@ public class Item : MonoBehaviour
             default:
 
             case "Golok": return ItemAsset2.Instance.Golok;
-            case "Gula Aren": return ItemAsset2.Instance.GulaAren;
+            case "Asem Jawa": return ItemAsset2.Instance.AsemJawa;
             case "Beras Kencur": return ItemAsset2.Instance.BerasKencur;
-
         }
     }
 
-    public int getAmount()
+    public int getHarga()
     {
-        return amount;
+        return harga;
+    }
+
+    public string getJeneng()
+    {
+        return jeneng;
     }
 }

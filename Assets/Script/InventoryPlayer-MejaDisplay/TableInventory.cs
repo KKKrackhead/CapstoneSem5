@@ -13,7 +13,7 @@ public class TableInventory : MonoBehaviour
 
     public void Awake()
     {
-        Display = new Item(Item.ItemType.Weapon, "Golok", 1);
+        Display = new Item(Item.ItemType.Weapon, "Golok", 18);
         checkItem = 1;
         gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
     }
@@ -39,7 +39,6 @@ public class TableInventory : MonoBehaviour
         }
 
         UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
-        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
         checkItem = 1;
     }
 

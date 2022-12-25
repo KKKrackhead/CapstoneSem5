@@ -19,9 +19,9 @@ public class Inventory : MonoBehaviour
 
         if(itemList.Count < 5)
         {
-            AddItem(new Item(Item.ItemType.Weapon, "Golok", 1));
-            AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 1));
-            AddItem(new Item(Item.ItemType.Ingredient, "Gula Aren", 1));
+            AddItem(new Item(Item.ItemType.Weapon, "Golok", 18));
+            AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 8));
+            AddItem(new Item(Item.ItemType.Ingredient, "Asem Jawa", 3));
         }
     }
 
@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
 
     public string getJeneng(int nomor)
     {
-        return itemList[nomor].jeneng;
+        return itemList[nomor].getJeneng();
     }
 
     public int getJumlahItem()

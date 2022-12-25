@@ -13,5 +13,5 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite Golok;
     public Sprite BerasKencur;
-    public Sprite GulaAren;
+    public Sprite AsemJawa;
 }
