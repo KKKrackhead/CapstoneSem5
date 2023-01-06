@@ -11,12 +11,12 @@ public class TableInventory : MonoBehaviour
     private int checkItem = 0;
 
 
-    public void Awake()
+    /*public void Awake()
     {
         Display = new Item(Item.ItemType.Weapon, "Golok", 18);
         checkItem = 1;
         gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
-    }
+    }*/
 
     public void ChangeImage(string jeneng, int itemIndex)
     {

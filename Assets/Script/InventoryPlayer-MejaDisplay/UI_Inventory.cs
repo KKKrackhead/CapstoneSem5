@@ -35,19 +35,20 @@ public class UI_Inventory : MonoBehaviour
         }
         nomor = 0;
 
-        int x = 0;
-        float itemSlotCellSize = 170f;
+        //int x = 0;
+        int y = 0;
+        float itemSlotCellSize = -170f;
 
         foreach (Item item in inventory.GetItemList())
         {
             RectTransform itemSlotRectTransform = Instantiate(itemSlotTemplate, itemSlotContainer).GetComponent<RectTransform>();
             itemSlotRectTransform.gameObject.SetActive(true);
-            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize,0f);
+            itemSlotRectTransform.anchoredPosition = new Vector2(0f,y * itemSlotCellSize);
 
             Image image = itemSlotRectTransform.Find("ItemImage").GetComponent<Image>();
             image.sprite = item.GetSprite();
             nomor++;
-            x++;
+            y++;
         }
 
         if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 1)
@@ -58,8 +59,7 @@ public class UI_Inventory : MonoBehaviour
             {
                 if (display.getHarga() != 0)
                 {
-                    Debug.Log("masuk1");
-
+                    Debug.Log("masuk");
                     mejaDisplay.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();

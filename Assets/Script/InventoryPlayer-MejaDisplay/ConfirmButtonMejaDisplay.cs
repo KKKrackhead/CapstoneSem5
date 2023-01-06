@@ -18,7 +18,7 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
     public void ConfirmButton()
     {
 
-        if(itemIndex != 0)
+        if(itemIndex != -1)
         {
             string jeneng = GameObject.Find("UI_PlayerInventory").GetComponent<UI_Inventory>().getJeneng(itemIndex);
 
@@ -42,7 +42,7 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
 
         else // item ada harus cek harga berubah atau gk (belum)
         {
-            RectTransform UI_InventoryActive =  GameObject.Find("Nyusun Barang1").GetComponent<RectTransform>();
+            RectTransform UI_InventoryActive =  GameObject.Find("Nyusun Barang1 Upgrade").GetComponent<RectTransform>();
 
             UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
         }
