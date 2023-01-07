@@ -7,6 +7,7 @@ public class ShopCheck : MonoBehaviour
 
     private int maxPengunjung = 5;
     private int antrianKasir = 0;
+    private int hargaBeli = 0;
     private List<GameObject> pembeli = new List<GameObject>();
 
     public int getMaxPengunjung()
@@ -34,5 +35,10 @@ public class ShopCheck : MonoBehaviour
         {
             LeanTween.moveLocalY(pembeli[a], pembeli[a].GetComponent<Transform>().localPosition.y - (-1), 1);
         }
+    }
+
+    public int dapetDuit()
+    {
+        return pembeli[0].GetComponent<NPC_Movement>().getHarga();
     }
 }

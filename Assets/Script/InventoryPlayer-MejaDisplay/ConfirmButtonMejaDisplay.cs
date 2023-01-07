@@ -50,6 +50,15 @@ public class ConfirmButtonMejaDisplay : MonoBehaviour
         GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
     }
 
+    public void closeBTN()
+    {
+        RectTransform UI_InventoryActive = GameObject.Find("Nyusun Barang1 Upgrade").GetComponent<RectTransform>();
+
+        UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
+
+        GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+    }
+
     public void setitemIndex(int nomor)
     {
         itemIndex = nomor;

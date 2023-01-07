@@ -153,6 +153,7 @@ public class NPC_Movement : MonoBehaviour
             {
                 transform.position = waypoints1[waypointIndex].transform.position;
                 waypointIndexMAX = 3 - jalur;
+                displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
                 displayTable[jalur].GetComponent<TableInventory>().removeItem();
             }
         }
@@ -174,8 +175,13 @@ public class NPC_Movement : MonoBehaviour
             }
         }*/
 
-        public int getJalur()
+    public int getJalur()
     {
         return jalur;
+    }
+
+    public int getHarga()
+    {
+        return buy.getHarga();
     }
 }

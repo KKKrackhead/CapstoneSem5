@@ -27,7 +27,7 @@ public class UI_Inventory : MonoBehaviour
 
     public void RefreshInventoryItems()
     {
-        Debug.Log("masuk");
+        Debug.Log("reset item");
         foreach (Transform child in itemSlotContainer)
         {
             if(child == itemSlotTemplate) continue;
@@ -59,11 +59,14 @@ public class UI_Inventory : MonoBehaviour
             {
                 if (display.getHarga() != 0)
                 {
-                    Debug.Log("masuk");
                     mejaDisplay.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
                 }
+            }
+            else
+            {
+                mejaDisplay.SetActive(false);
             }
         }
         else if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 2)
@@ -74,11 +77,14 @@ public class UI_Inventory : MonoBehaviour
             {
                 if (display.getHarga() != 0)
                 {
-                    Debug.Log("masuk2");
                     mejaDisplay.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
                 }
+            }
+            else
+            {
+                mejaDisplay.SetActive(false);
             }
         }
     }

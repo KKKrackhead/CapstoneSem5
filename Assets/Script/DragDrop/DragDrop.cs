@@ -45,7 +45,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if(rectTransform.anchoredPosition != target.anchoredPosition)
         {
             rectTransform.anchoredPosition = home.anchoredPosition;
-            parent1.anchoredPosition = new Vector2(0f,nomor * -190f);
+            parent1.anchoredPosition = new Vector2(0f,nomor * -170f);
         }
         else
         {

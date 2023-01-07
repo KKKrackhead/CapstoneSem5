@@ -59,4 +59,9 @@ public class Item : MonoBehaviour
     {
         return jeneng;
     }
+
+    public void setHarga(int harga)
+    {
+       this.harga = harga;
+    }
 }
