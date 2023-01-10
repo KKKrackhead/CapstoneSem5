@@ -18,7 +18,7 @@ public class PlayerInteraction : MonoBehaviour
     private int lemari = 0;
     private int kasir = 0;
 
-    private int playerGold;
+    public int playerGold;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -39,6 +39,11 @@ public class PlayerInteraction : MonoBehaviour
             playerGold += GameObject.Find("ShopCheck").GetComponent<ShopCheck>().dapetDuit();
             GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
             Debug.Log("player gold sekarang = " + playerGold);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("Player's gold now = " +playerGold);
         }
     }
 
