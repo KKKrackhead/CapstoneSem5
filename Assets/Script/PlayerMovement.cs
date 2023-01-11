@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Inventory inventory;
 
     [SerializeField] private UI_Inventory uiInventory;
-    [SerializeField] private UI_Inventory uiInventory2;
+    [SerializeField] private UI_Inventory2 uiInventory2;
     [SerializeField] private ConfirmButtonMejaDisplay confirmButton;
     [SerializeField] private Mover move;
 

@@ -13,7 +13,7 @@ public class MoveClickPlayer : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        itemIndex = UI_playerInventory.GetComponent<UI_Inventory>().getNomor();
+        itemIndex = UI_playerInventory.GetComponent<UI_Inventory2>().getNomor();
     }
 
     public void OnPointerClick(PointerEventData eventData)

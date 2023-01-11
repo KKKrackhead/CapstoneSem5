@@ -608,7 +608,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1928,7 +1928,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 209798463, guid: 428848e7155fa8447be1d46dc198282c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2618,6 +2618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 3
   ShopSlotIndex: 1
+  ItemPriceToText: {fileID: 0}
+  BuyIndex: 0
+  BuyPrice: 0
 --- !u!1 &533081461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3385,7 +3388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3552,7 +3555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &637402993
 Transform:
   m_ObjectHideFlags: 0
@@ -3771,7 +3774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4531,7 +4534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4777,6 +4780,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 8
   ShopSlotIndex: 2
+  ItemPriceToText: {fileID: 0}
+  BuyIndex: 0
+  BuyPrice: 0
 --- !u!1 &894560672
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,7 +4903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &894801230
 Transform:
   m_ObjectHideFlags: 0
@@ -5198,7 +5204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5341,7 +5347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8f0f8a850786f43bc4f45e8dd4adc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemPriceToText: {fileID: 0}
 --- !u!1 &1054065977
 GameObject:
   m_ObjectHideFlags: 0
@@ -6237,7 +6242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6498,6 +6503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_InventoryActive: {fileID: 534736644}
   UI_Lemari: {fileID: 1054065978}
+  playerGold: 0
 --- !u!1 &1203134363
 GameObject:
   m_ObjectHideFlags: 0
@@ -6556,7 +6562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7553,7 +7559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7893,7 +7899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7969,7 +7975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8280,7 +8286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8578,7 +8584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9008,7 +9014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1365845186, guid: 428848e7155fa8447be1d46dc198282c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9362,7 +9368,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10512,7 +10518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11239,7 +11245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1900769982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de9bfe92f929ea4498f9bb700ee6018, type: 3}
+  m_Script: {fileID: 11500000, guid: 9db298251bd18e7438221457bf39d76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemSlotContainer: {fileID: 1378736464}
@@ -11379,7 +11385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12043,6 +12049,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 18
   ShopSlotIndex: 3
+  ItemPriceToText: {fileID: 0}
+  BuyIndex: 0
+  BuyPrice: 0
 --- !u!1 &1986197349
 GameObject:
   m_ObjectHideFlags: 0
@@ -12840,7 +12849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 249727763, guid: bca3701656062f04f9dbda2c07504e99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
