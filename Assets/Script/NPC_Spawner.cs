@@ -8,6 +8,7 @@ public class NPC_Spawner : MonoBehaviour
     public Transform SpawnPoint;
     private int randomNPC_Type;
     private bool ea = false;
+    //kurang boolean buat cek jualan udah beres ato gk
     private int jumlahNPC = 0;
     private GameObject baru;
     private int jalurNPC;
@@ -52,5 +53,10 @@ public class NPC_Spawner : MonoBehaviour
     public void setJumlahNPC()
     {
         jumlahNPC -= 1;
+    }
+
+    public int getJumlahNPC()
+    {
+        return jumlahNPC;
     }
 }

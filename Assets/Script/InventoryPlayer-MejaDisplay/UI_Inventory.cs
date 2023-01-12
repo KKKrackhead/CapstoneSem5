@@ -10,6 +10,7 @@ public class UI_Inventory : MonoBehaviour
     public GameObject mejaDisplay;
     private Item display = null;
     private int nomor;
+    public GameObject hargaBarang;
 
     public void setInventory(Inventory inventory)   
     {
@@ -60,8 +61,11 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    hargaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
             }
             else
@@ -78,8 +82,11 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    hargaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
             }
             else
