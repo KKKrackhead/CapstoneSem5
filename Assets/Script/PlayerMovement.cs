@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
-    private Vector2 moveDirection;
+    public Vector2 moveDirection;
     private Inventory inventory;
 
     [SerializeField] private UI_Inventory uiInventory;
@@ -38,6 +38,21 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY);
+
+        if (moveDirection.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (moveDirection.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (GetComponent<Animator>())
+        {
+            GetComponent<Animator>().SetFloat("Velx", Mathf.Abs(moveDirection.x));
+            GetComponent<Animator>().SetFloat("Vely", Mathf.Abs(moveDirection.y));
+        }
 
     }
 
