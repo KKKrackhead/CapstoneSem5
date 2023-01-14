@@ -11,19 +11,19 @@ public class ItemPricing : MonoBehaviour
 
     [Header ("TMP")]
     [SerializeField] private Text ItemPriceToText;
-
-    public int BuyIndex;
-    public int BuyPrice;
-
     
+    private int buyprice;
+
     public void ChangeIndex()
     {
-        BuyIndex = ShopSlotIndex;
-        BuyPrice = ShopItemPrice;
-        Debug.Log("serialized index =" + ShopSlotIndex);
-        Debug.Log("index = " +BuyIndex);
-        Debug.Log("Current Item Price =" +BuyPrice);
-
-        ItemPriceToText.text = BuyPrice.ToString();
+        ItemPriceToText.text = ShopItemPrice.ToString();
     }
+
+    public int changeprice()
+    {
+        buyprice = ShopItemPrice;
+        return buyprice;
+    }
+
+    
 }

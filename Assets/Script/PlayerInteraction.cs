@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -40,11 +41,12 @@ public class PlayerInteraction : MonoBehaviour
             GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
             Debug.Log("player gold sekarang = " + playerGold);
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("Player's gold now = " +playerGold);
-        }
+    public void buy()
+    {
+        playerGold -= GetComponent<ItemPricing>().changeprice();
+        Debug.Log("Gold habis kurang = " + playerGold);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

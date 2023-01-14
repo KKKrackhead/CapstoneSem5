@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour
         if (GetComponent<Animator>())
         {
             GetComponent<Animator>().SetFloat("Velx", Mathf.Abs(moveDirection.x));
+        }
+
+        if (GetComponent<Animator>())
+        {
             GetComponent<Animator>().SetFloat("Vely", Mathf.Abs(moveDirection.y));
         }
 
@@ -65,4 +69,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return inventory;
     }
-} 
+}

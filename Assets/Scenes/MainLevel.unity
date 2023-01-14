@@ -1066,7 +1066,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 278365684}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1178513592}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &278365684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2618,9 +2630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 3
   ShopSlotIndex: 1
-  ItemPriceToText: {fileID: 0}
-  BuyIndex: 0
-  BuyPrice: 0
+  ItemPriceToText: {fileID: 533081465}
 --- !u!1 &533081461
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,9 +5031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 8
   ShopSlotIndex: 2
-  ItemPriceToText: {fileID: 0}
-  BuyIndex: 0
-  BuyPrice: 0
+  ItemPriceToText: {fileID: 533081465}
 --- !u!1 &894560672
 GameObject:
   m_ObjectHideFlags: 0
@@ -5585,9 +5593,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1012157172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8f0f8a850786f43bc4f45e8dd4adc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 71fb023c3deb31e46a488a7d241a6249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopcanvas: {fileID: 2069875311}
+  shopui: {fileID: 1655306666}
+  ShopIsOpen: 0
+  temp: {x: 0, y: 0, z: 0}
 --- !u!1 &1054065977
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,7 +6626,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0038360977, y: -0.041812167}
   m_SpriteTilingProperty:
-    border: {x: 0.50625, y: 0.43125004, z: 0.4875, w: 0.3541667}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.2, y: 1.2}
     newSize: {x: 5.76, y: 5.76}
@@ -6727,6 +6739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1178513588}
+  moveDirection: {x: 0, y: 0}
   uiInventory: {fileID: 768984062}
   uiInventory2: {fileID: 1900769984}
   confirmButton: {fileID: 1634634101}
@@ -12670,9 +12683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopItemPrice: 18
   ShopSlotIndex: 3
-  ItemPriceToText: {fileID: 0}
-  BuyIndex: 0
-  BuyPrice: 0
+  ItemPriceToText: {fileID: 533081465}
 --- !u!1 &1974187748
 GameObject:
   m_ObjectHideFlags: 0

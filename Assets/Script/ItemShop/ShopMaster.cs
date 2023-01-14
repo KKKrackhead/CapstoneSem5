@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ShopTrigger : MonoBehaviour
+public class ShopMaster : MonoBehaviour
 {
     [SerializeField] GameObject shopcanvas;
     [SerializeField] GameObject shopui;
@@ -37,7 +38,6 @@ public class ShopTrigger : MonoBehaviour
             ShopIsOpen = true;
         }
     }
-
     public void exitshop()
     {
         shopui.transform.position = new Vector3(-4590, -8010, 0) * .2f;
