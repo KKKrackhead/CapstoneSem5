@@ -70,4 +70,25 @@ public class Inventory2 : MonoBehaviour
 
         return jumlahItem;
     }
+
+    public void AddFromBuy(int AddPrice)
+    {
+        Debug.Log("To add = " +AddPrice);
+
+
+        switch (AddPrice)
+        {
+            case 3:
+                AddItem(new Item(Item.ItemType.Ingredient, "Asem Jawa", 3));
+                break;
+            case 8:
+                AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 8));
+                break;
+            case 18:
+                AddItem(new Item(Item.ItemType.Weapon, "Golok", 18));
+                break;
+            default:
+                break;
+        }
+    }
 }

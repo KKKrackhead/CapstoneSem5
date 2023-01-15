@@ -47,7 +47,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log("gold received = " +price);
         playerGold -= price;
-        Debug.Log(playerGold);
+        Debug.Log("Player's gold after buying = " +playerGold);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
