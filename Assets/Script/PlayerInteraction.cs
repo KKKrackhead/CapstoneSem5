@@ -43,10 +43,11 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    public void buy()
+    public void PlayerDoBuy(int price)
     {
-        playerGold -= GetComponent<ItemPricing>().changeprice();
-        Debug.Log("Gold habis kurang = " + playerGold);
+        Debug.Log("gold received = " +price);
+        playerGold -= price;
+        Debug.Log(playerGold);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -18,12 +18,4 @@ public class ItemPricing : MonoBehaviour
     {
         ItemPriceToText.text = ShopItemPrice.ToString();
     }
-
-    public int changeprice()
-    {
-        buyprice = ShopItemPrice;
-        return buyprice;
-    }
-
-    
 }
