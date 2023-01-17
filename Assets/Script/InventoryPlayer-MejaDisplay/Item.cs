@@ -34,8 +34,16 @@ public class Item : MonoBehaviour
             default:
 
             case "Golok": return ItemAssets.Instance.Golok;
-            case "Asem Jawa": return ItemAssets.Instance.AsemJawa;
+            case "Clurit": return ItemAssets.Instance.Clurit;
+            case "Keris": return ItemAssets.Instance.Keris;
+
             case "Beras Kencur": return ItemAssets.Instance.BerasKencur;
+            case "Kunyit Asem": return ItemAssets.Instance.KunyitAsem;
+            case "Brotowali": return ItemAssets.Instance.Brotowali;
+
+            case "Asem Jawa": return ItemAssets.Instance.AsemJawa;
+            case "Jahe Merah": return ItemAssets.Instance.JaheMerah;
+            case "Pandan": return ItemAssets.Instance.Pandan;
         }
     }
     public Sprite GetSprite2()
@@ -44,9 +52,17 @@ public class Item : MonoBehaviour
         {
             default:
 
-            case "Golok": return ItemAsset2.Instance.Golok;
-            case "Asem Jawa": return ItemAsset2.Instance.AsemJawa;
-            case "Beras Kencur": return ItemAsset2.Instance.BerasKencur;
+            case "Golok": return ItemAssets.Instance.Golok;
+            case "Clurit": return ItemAssets.Instance.Clurit;
+            case "Keris": return ItemAssets.Instance.Keris;
+
+            case "Beras Kencur": return ItemAssets.Instance.BerasKencur;
+            case "Kunyit Asem": return ItemAssets.Instance.KunyitAsem;
+            case "Brotowali": return ItemAssets.Instance.Brotowali;
+
+            case "Asem Jawa": return ItemAssets.Instance.AsemJawa;
+            case "Jahe Merah": return ItemAssets.Instance.JaheMerah;
+            case "Pandan": return ItemAssets.Instance.Pandan;
         }
     }
 

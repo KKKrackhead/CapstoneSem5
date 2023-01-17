@@ -12,6 +12,12 @@ public class ItemAssets : MonoBehaviour
     }
 
     public Sprite Golok;
+    public Sprite Clurit;
+    public Sprite Keris;
     public Sprite BerasKencur;
+    public Sprite KunyitAsem;
+    public Sprite Brotowali;
+    public Sprite JaheMerah;
+    public Sprite Pandan;
     public Sprite AsemJawa;
 }
