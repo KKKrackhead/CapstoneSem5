@@ -46,6 +46,7 @@ public class ShopCheck : MonoBehaviour
     {
         LeanTween.scale(pembeli[0], new Vector3(0, 0), 0.5f).setEaseInElastic();
         pembeli.RemoveAt(0);
+        Sound.playSound("coin");
 
         for(int a = 0; a < pembeli.Count; a++)
         {

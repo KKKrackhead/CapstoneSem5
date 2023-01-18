@@ -35,6 +35,8 @@ public class NPC_Spawner : MonoBehaviour
     {
         ea = true;
 
+        Sound.playSound("pembeli");
+
         randomNPC_Type = Random.Range(0, NPCPrefabs.Length);
 
         baru = Instantiate(NPCPrefabs[randomNPC_Type], SpawnPoint.position, transform.rotation);
