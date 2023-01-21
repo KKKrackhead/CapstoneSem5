@@ -15,18 +15,21 @@ public class NPC_Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (!ea)
+        if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(7))
         {
-            if (jumlahNPC <= 5)
+            if (!ea)
             {
-                if(jumlahNPC == 0)
+                if (jumlahNPC <= 5)
                 {
-                    StartCoroutine(Waiter());
+                    if (jumlahNPC == 0)
+                    {
+                        StartCoroutine(Waiter());
+                    }
+                    else if (jalurNPC != 10)
+                    {
+                        StartCoroutine(Waiter());
+                    }
                 }
-                else if(jalurNPC != 10)
-                {
-                    StartCoroutine(Waiter());
-                }             
             }
         }
     }
@@ -43,11 +46,11 @@ public class NPC_Spawner : MonoBehaviour
 
         baru.SetActive(true);
 
-        yield return new WaitForSeconds(10);
-
         jumlahNPC += 1;
 
         jalurNPC = baru.GetComponent<NPC_Movement>().getJalur();
+
+        yield return new WaitForSeconds(10);
 
         ea = false;
     }

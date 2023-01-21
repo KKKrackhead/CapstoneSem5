@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public RectTransform UI_InventoryActive;
     public RectTransform UI_Lemari;
+    public Text uangPlayer;
 
     private int meja = 0;
     /*
@@ -20,6 +21,13 @@ public class PlayerInteraction : MonoBehaviour
     private int kasir = 0;
 
     public int playerGold;
+    private int playerGoldAwal;
+
+    private void Awake()
+    {
+        playerGoldAwal = playerGold;
+        uangPlayer.text = "" + playerGold;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -37,9 +45,15 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.E) && kasir != 0)
         {
-            playerGold += GameObject.Find("ShopCheck").GetComponent<ShopCheck>().dapetDuit();
-            GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
-            Debug.Log("player gold sekarang = " + playerGold);
+            int tanda = GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getAntrianKasir();
+
+            if (tanda != 0)
+            {
+                playerGold += GameObject.Find("ShopCheck").GetComponent<ShopCheck>().dapetDuit();
+                GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
+                uangPlayer.text = "" + playerGold;
+                Debug.Log("player gold sekarang = " + playerGold);
+            }
         }
     }
 
@@ -68,6 +82,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             kasir = 1;
         }
+    }
+
+    public int getKeuntungan()
+    {
+        return (playerGold - playerGoldAwal);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

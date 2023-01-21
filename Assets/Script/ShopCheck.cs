@@ -13,8 +13,8 @@ public class ShopCheck : MonoBehaviour
 
     //timer
     private bool timerRunning = true;
-    private float timePass = 0f;
-    private float minutesGame = 6;
+    private float timePass = 0;
+    private int minutesGame = 6;
     private float secondsGame;
     private float secondsReal;
 
@@ -25,6 +25,7 @@ public class ShopCheck : MonoBehaviour
     public GameObject keuntunganMuncul;
     public GameObject keuntunganUI;
     private int tandaUI;
+    public Text keuntungan;
 
     public int getMaxPengunjung()
     {
@@ -47,8 +48,10 @@ public class ShopCheck : MonoBehaviour
         LeanTween.scale(pembeli[0], new Vector3(0, 0), 0.5f).setEaseInElastic();
         pembeli.RemoveAt(0);
         Sound.playSound("coin");
+        antrianKasir -= 1;
+        NPCSpawner.GetComponent<NPC_Spawner>().setJumlahNPC();
 
-        for(int a = 0; a < pembeli.Count; a++)
+        for (int a = 0; a < pembeli.Count; a++)
         {
             LeanTween.moveLocalY(pembeli[a], pembeli[a].GetComponent<Transform>().localPosition.y - (-1), 1);
         }
@@ -64,7 +67,7 @@ public class ShopCheck : MonoBehaviour
         timerRunning = value;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (timerRunning)
         {
@@ -85,15 +88,21 @@ public class ShopCheck : MonoBehaviour
                     timerRunning = false;
                 }
             }
-            timeText.text = string.Format("{0:00}:{1:00}", minutesGame, secondsGame);
+            timeText.text = string.Format("{0:00} {1:00}", minutesGame, secondsGame);
         }
-        else if(!timerRunning && NPCSpawner.GetComponent<NPC_Spawner>().getJumlahNPC().Equals(0) && tandaUI == 0)
+        if(!timerRunning && NPCSpawner.GetComponent<NPC_Spawner>().getJumlahNPC().Equals(0) && tandaUI == 0)
         {
+            keuntungan.text = "" + GameObject.Find("Player").GetComponent<PlayerInteraction>().getKeuntungan();
             Debug.Log("aa");
             tandaUI = 1;
             LeanTween.moveLocalY(keuntunganMuncul, 0f, 0.1f);
-            LeanTween.scale(keuntunganUI, new Vector3(1f, 1f), 0.5f).setEaseInElastic();
+            LeanTween.scale(keuntunganUI, new Vector3(1f, 1f), 1.5f).setEaseInElastic();
             timeText.gameObject.SetActive(false);
         }
+    }
+
+    public int getMinutesReal()
+    {
+        return minutesGame;
     }
 }
