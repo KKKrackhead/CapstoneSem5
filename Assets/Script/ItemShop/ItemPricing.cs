@@ -7,7 +7,6 @@ public class ItemPricing : MonoBehaviour
 {
     [Header("Item price & index")]
     [SerializeField] private int ShopItemPrice;
-    [SerializeField] private int ShopSlotIndex;
 
     [Header ("TMP")]
     [SerializeField] private Text ItemPriceToText;

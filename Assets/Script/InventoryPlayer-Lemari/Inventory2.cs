@@ -8,7 +8,7 @@ public class Inventory2 : MonoBehaviour
     //inventory lemari
     public event EventHandler OnItemListChanged2;
 
-    private List<Item> itemList;
+    public List<Item> itemList;
 
     private int jumlahItem;
 
@@ -16,7 +16,7 @@ public class Inventory2 : MonoBehaviour
     {
         itemList = new List<Item>();
 
-        if (itemList.Count < 15)
+        if (itemList.Count <= 15)
         {
             AddItem(new Item(Item.ItemType.Weapon, "Golok", 18));
             AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 8));
@@ -69,26 +69,5 @@ public class Inventory2 : MonoBehaviour
         jumlahItem = itemList.Count;
 
         return jumlahItem;
-    }
-
-    public void AddFromBuy(int AddPrice)
-    {
-        Debug.Log("To add = " +AddPrice);
-
-
-        switch (AddPrice)
-        {
-            case 3:
-                AddItem(new Item(Item.ItemType.Ingredient, "Asem Jawa", 3));
-                break;
-            case 8:
-                AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 8));
-                break;
-            case 18:
-                AddItem(new Item(Item.ItemType.Weapon, "Golok", 18));
-                break;
-            default:
-                break;
-        }
     }
 }

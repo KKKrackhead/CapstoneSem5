@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private UI_Inventory2 uiInventory2;
     [SerializeField] private ConfirmButtonMejaDisplay confirmButton;
     [SerializeField] private Mover move;
+    [SerializeField] public GameObject ShopOpen;
 
 
     /*private void Awake()
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ShopOpen.GetComponent<ShopMaster>().ShopIsOpen) return;
+
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 

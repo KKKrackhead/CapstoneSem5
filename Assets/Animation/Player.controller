@@ -88,7 +88,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Velx
-    m_EventTreshold: 1
+    m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4536367865519410707}
   m_Solo: 0
@@ -138,10 +138,10 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Velx
-    m_EventTreshold: 1
+    m_EventTreshold: 0.1
   - m_ConditionMode: 4
     m_ConditionEvent: Vely
-    m_EventTreshold: 1
+    m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4536367865519410707}
   m_Solo: 0

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI_LemariInventory : MonoBehaviour
 {
-    private Inventory2 inventory;
+    public Inventory2 inventory;
     public Transform itemSlotContainer;
     public Transform itemSlotTemplate;
     private int nomor;
@@ -74,8 +74,15 @@ public class UI_LemariInventory : MonoBehaviour
             }
         }
     }
+
     public int getNomor()
     {
         return nomor;
+    }
+
+
+    public Inventory2 getInventory()
+    {
+        return inventory;
     }
 }
