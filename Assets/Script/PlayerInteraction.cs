@@ -62,6 +62,7 @@ public class PlayerInteraction : MonoBehaviour
         Debug.Log("gold received = " +price);
         playerGold -= price;
         Debug.Log("Player's gold after buying = " +playerGold);
+        Sound.playSound("coin");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,6 +74,14 @@ public class PlayerInteraction : MonoBehaviour
         else if (collision.tag.Equals("MejaAtasKanan"))
         {
             meja = 2;
+        }
+        else if (collision.tag.Equals("MejaBawahKiri"))
+        {
+            meja = 3;
+        }
+        else if (collision.tag.Equals("MejaBawahKanan"))
+        {
+            meja = 4;
         }
         else if (collision.tag.Equals("Lemari"))
         {

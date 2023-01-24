@@ -9,6 +9,8 @@ TagManager:
   - ItemDisplay
   - Lemari
   - Kasir
+  - MejaBawahKiri
+  - MejaBawahKanan
   layers:
   - Default
   - TransparentFX

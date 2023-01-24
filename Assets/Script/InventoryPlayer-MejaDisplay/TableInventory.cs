@@ -24,12 +24,19 @@ public class TableInventory : MonoBehaviour
 
     private int hargaAkhir;
 
-    public void Awake()
+    /*public void Awake()
     {
-        Display = new Item(Item.ItemType.Weapon, "Golok", 18);
+        Display = new Item(Item.ItemType.Weapon, "Clurit", 90);
         checkItem = 1;
-        gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
-    }
+        if(gameObject.name.Equals("MejaAtasKananDisplay") || gameObject.name.Equals("MejaAtasKiriDisplay"))
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
+        }
+        else if (gameObject.name.Equals("MejaBawahKananDisplay") || gameObject.name.Equals("MejaBawahKiriDisplay"))
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite3();
+        }
+    }*/
 
     public void ChangeImage(string jeneng, int itemIndex)
     {
@@ -37,11 +44,12 @@ public class TableInventory : MonoBehaviour
         inventory = GameObject.Find("Player").GetComponent<PlayerMovement>().getPlayerInventory();
 
         Display = inventory.getItem(itemIndex);
-        setHarga();
 
-        Display.setHarga(hargaAkhir);
+        gantiHarga();
 
-        if (jeneng.Equals("Golok"))
+        gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite2();
+
+        /*if (jeneng.Equals("Golok"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite();
         }
@@ -52,11 +60,16 @@ public class TableInventory : MonoBehaviour
         else if(jeneng.Equals("Asem Jawa"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = Display.GetSprite();
-        }
+        }*/
 
         UI_InventoryActive.anchoredPosition = new Vector3(4060f, 540f, 0f);
         checkItem = 1;
-        Debug.Log(Display.getHarga());
+    }
+
+    public void gantiHarga()
+    {
+        setHarga();
+        Display.setHarga(hargaAkhir);
     }
 
     public int getCheckItem()
@@ -89,5 +102,11 @@ public class TableInventory : MonoBehaviour
         puluhRibuanI = puluhRibuan.GetComponent<PriceSet>().getHarga();
 
         hargaAkhir = satuanI + (puluhanI * 10) + (ratusanI * 100) + (ribuanI * 1000) + (puluhRibuanI * 10000);
+
+        satuan.GetComponent<PriceSet>().resetHarga();
+        puluhan.GetComponent<PriceSet>().resetHarga();
+        ratusan.GetComponent<PriceSet>().resetHarga();
+        ribuan.GetComponent<PriceSet>().resetHarga();
+        puluhRibuan.GetComponent<PriceSet>().resetHarga();
     }
 }

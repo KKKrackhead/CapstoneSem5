@@ -16,6 +16,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public GameObject ConfirmButton;
 
     private int nomor;
+    private int tanda = 0;
   //private Item display;
 
     private void Awake()
@@ -30,6 +31,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        tanda = 1;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -49,8 +51,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         else
         {
-            parent1.anchoredPosition = new Vector2(0f, 0f);
-            ConfirmButton.GetComponent<ConfirmButtonMejaDisplay>().setitemIndex(nomor);
+            if(tanda != 0)
+            {
+                Debug.Log("kok jalan");
+                parent1.anchoredPosition = new Vector2(0f, 0f);
+                ConfirmButton.GetComponent<ConfirmButtonMejaDisplay>().setitemIndex(nomor);
+            }
         }
     }
 

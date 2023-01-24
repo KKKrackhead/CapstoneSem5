@@ -51,19 +51,19 @@ public class BuyMaster : MonoBehaviour
                 cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Pandan", 30));
                 break;
             case 56:
-                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Kunyit Asem", 56));
+                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Potion, "Kunyit Asem", 56));
                 break;
             case 90:
-                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Clurit", 90));
+                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Weapon, "Clurit", 90));
                 break;
             case 300:
                 cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Jahe Merah", 300));
                 break;
             case 392:
-                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Brotowali", 392));
+                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Potion, "Brotowali", 392));
                 break;
             case 450:
-                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Ingredient, "Keris", 450));
+                cariInv.GetComponent<UI_LemariInventory>().inventory.AddItem(new Item(Item.ItemType.Weapon, "Keris", 450));
                 break;
 
             default:

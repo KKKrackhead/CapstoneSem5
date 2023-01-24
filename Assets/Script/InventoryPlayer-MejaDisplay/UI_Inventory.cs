@@ -28,13 +28,14 @@ public class UI_Inventory : MonoBehaviour
 
     public void RefreshInventoryItems()
     {
-        Debug.Log("reset item");
         foreach (Transform child in itemSlotContainer)
         {
             if(child == itemSlotTemplate) continue;
             Destroy(child.gameObject);
         }
         nomor = 0;
+
+        hargaBarang.SetActive(false);
 
         //int x = 0;
         int y = 0;
@@ -76,6 +77,48 @@ public class UI_Inventory : MonoBehaviour
         else if(GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 2)
         {
             display = GameObject.Find("MejaAtasKananDisplay").GetComponent<TableInventory>().getItemDisplay();
+
+            if (display is not null)
+            {
+                if (display.getHarga() != 0)
+                {
+                    mejaDisplay.SetActive(true);
+                    hargaBarang.SetActive(true);
+
+                    mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
+                }
+            }
+            else
+            {
+                mejaDisplay.SetActive(false);
+            }
+        }
+        else if (GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 3)
+        {
+            display = GameObject.Find("MejaBawahKiriDisplay").GetComponent<TableInventory>().getItemDisplay();
+
+            if (display is not null)
+            {
+                if (display.getHarga() != 0)
+                {
+                    mejaDisplay.SetActive(true);
+                    hargaBarang.SetActive(true);
+
+                    mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
+                }
+            }
+            else
+            {
+                mejaDisplay.SetActive(false);
+            }
+        }
+        else if (GameObject.Find("Player").GetComponent<PlayerInteraction>().getMeja() == 4)
+        {
+            display = GameObject.Find("MejaBawahKananDisplay").GetComponent<TableInventory>().getItemDisplay();
 
             if (display is not null)
             {

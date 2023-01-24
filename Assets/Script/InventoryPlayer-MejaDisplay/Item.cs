@@ -66,6 +66,26 @@ public class Item : MonoBehaviour
         }
     }
 
+    public Sprite GetSprite3()
+    {
+        switch (jeneng)
+        {
+            default:
+
+            case "Golok": return ItemAsset3.Instance.Golok;
+            case "Clurit": return ItemAsset3.Instance.Clurit;
+            case "Keris": return ItemAsset3.Instance.Keris;
+
+            case "Beras Kencur": return ItemAsset3.Instance.BerasKencur;
+            case "Kunyit Asem": return ItemAsset3.Instance.KunyitAsem;
+            case "Brotowali": return ItemAsset3.Instance.Brotowali;
+
+            case "Asem Jawa": return ItemAsset3.Instance.AsemJawa;
+            case "Jahe Merah": return ItemAsset3.Instance.JaheMerah;
+            case "Pandan": return ItemAsset3.Instance.Pandan;
+        }
+    }
+
     public int getHarga()
     {
         return harga;

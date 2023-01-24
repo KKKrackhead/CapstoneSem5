@@ -33,6 +33,12 @@ public class PriceSet : MonoBehaviour
         }
     }
 
+    public void resetHarga()
+    {
+        harga = 0;
+        teksHarga.text = harga.ToString();
+    }
+
     private void updateHarga()
     {
         harga = int.Parse(teksHarga.text);

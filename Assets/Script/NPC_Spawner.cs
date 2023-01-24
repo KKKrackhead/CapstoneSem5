@@ -15,7 +15,7 @@ public class NPC_Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(7))
+        if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(6))
         {
             if (!ea)
             {

@@ -6,6 +6,7 @@ public class NPC_Movement : MonoBehaviour
 {
     [SerializeField] private Transform[] waypoints1; //meja atas
     [SerializeField] private Transform[] waypoints2; //ke kasir
+    [SerializeField] private Transform[] waypoints3; //meja bawah
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private List<GameObject> displayTable;
     List<int> checkTableDisplay = new List<int>();
@@ -44,23 +45,56 @@ public class NPC_Movement : MonoBehaviour
                     int antrian = GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getAntrianKasir();
                     waypointIndexMAX = 7 - (5 - antrian);
                 }
-
                 MoveToCashierFromTop();
             }
             else if (jalur == 0 || jalur == 1)
             {
                 Move1();
             }
+            else if(jalur == 2 || jalur == 3)
+            {
+                Move2();
+            }
+            
         }
     }
 
     private void Move1()
     {
-        if(waypointIndex <= waypoints1.Length - 1)
+        if (waypointIndex <= waypoints1.Length - 1)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints1[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
 
-            if(gameObject.transform.position == waypoints1[waypointIndex].transform.position)
+            if (gameObject.transform.position == waypoints1[waypointIndex].transform.position)
+            {
+                if (waypointIndex != waypointIndexMAX)
+                {
+                    waypointIndex++;
+                }
+                else
+                {
+                    waypointIndex += 10;
+                }
+            }
+        }
+        else
+        {
+            Item beli = displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
+            buy = new Item(beli);
+            displayTable[jalur].GetComponent<TableInventory>().removeItemDisplay();
+            kasir = 1;
+            GameObject.Find("ShopCheck").GetComponent<ShopCheck>().setAntrianKasir(gameObject);
+            //Destroy(gameObject);
+        }
+    }
+
+    private void Move2()
+    {
+        if(waypointIndex <= waypoints3.Length - 1)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, waypoints3[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+
+            if(gameObject.transform.position == waypoints3[waypointIndex].transform.position)
             {
                 if (waypointIndex != waypointIndexMAX)
                 {
@@ -140,6 +174,14 @@ public class NPC_Movement : MonoBehaviour
                     {
                         jalur = 0;
                     }
+                    else if (displayTableTemp[y - 1].gameObject.name.Equals("MejaBawahKiriDisplay"))
+                    {
+                        jalur = 3;
+                    }
+                    else if (displayTableTemp[y - 1].gameObject.name.Equals("MejaBawahKananDisplay"))
+                    {
+                        jalur = 2;
+                    }
                     checkTableDisplay.RemoveAt(y - 1);
                 }
                 else
@@ -155,6 +197,15 @@ public class NPC_Movement : MonoBehaviour
                 waypointIndexMAX = 3 - jalur;
                 displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
                 displayTable[jalur].GetComponent<TableInventory>().removeItem();
+                Debug.Log(displayTable[jalur].name);
+            }
+            else if(jalur == 2 || jalur == 3)
+            {
+                transform.position = waypoints3[waypointIndex].transform.position;
+                waypointIndexMAX = 3 - (jalur-2);
+                displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
+                displayTable[jalur].GetComponent<TableInventory>().removeItem();
+                Debug.Log(displayTable[jalur].name);
             }
         }
 
