@@ -9,6 +9,7 @@ public class NPC_Movement : MonoBehaviour
     [SerializeField] private Transform[] waypoints3; //meja bawah
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private List<GameObject> displayTable;
+    [SerializeField] private GameObject emote;
     List<int> checkTableDisplay = new List<int>();
 
     private int waypointIndex = 0;
@@ -18,17 +19,18 @@ public class NPC_Movement : MonoBehaviour
 
     private int kasir;
     private int tandain;
-    private int jalur;
+    public int jalur = 10;
     /*
      0 = atas kanan  
      1 = atas kiri
     */
-    private void Start()
+    private void Awake()
     {
+        jalur = 10;
         nentuinJalur();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(jalur == 10)
         {
@@ -137,9 +139,15 @@ public class NPC_Movement : MonoBehaviour
         }
     }
 
-    private void nentuinJalur() // cuma baru buat yg meja atas
+    private void nentuinJalur()
     {
+        emote.SetActive(false);
+
         checkTableDisplay.Clear();
+
+        int tanda = 0;
+        int tanda2 = 0;
+        int tanda3 = 0;
 
         List<GameObject> displayTableTemp = new List<GameObject>();
 
@@ -150,9 +158,118 @@ public class NPC_Movement : MonoBehaviour
                 checkTableDisplay.Add(displayTable[x].GetComponent<TableInventory>().getCheckItem());
                 displayTableTemp.Add(displayTable[x]);
             }
-        }
 
-        int tanda = 0;
+            for (int x = 0; x < checkTableDisplay.Count; x++)
+            {
+                if (checkTableDisplay.Count.Equals(0))
+                {
+                    tanda = 2;
+                    jalur = 10;
+                    break;
+                }
+                else if (checkTableDisplay[x] == 1)
+                {
+                    Item barang = displayTableTemp[x].gameObject.GetComponent<TableInventory>().getItemDisplay();
+
+                    string namaBarang = barang.getJeneng();
+                    int hargaBarang = barang.getHarga();
+
+                    if (namaBarang.Equals("Golok"))
+                    {
+                        if(hargaBarang > 25)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Clurit"))
+                    {
+                        if (hargaBarang > 109)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Keris"))
+                    {
+                        if (hargaBarang > 476)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+
+                    else if (namaBarang.Equals("Beras Kencur"))
+                    {
+                        if (hargaBarang > 15)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Kunyit Asem"))
+                    {
+                        if (hargaBarang > 75)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Brotowali"))
+                    {
+                        if (hargaBarang > 418)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+
+                    else if (namaBarang.Equals("Jahe Merah"))
+                    {
+                        if (hargaBarang > 10)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Pandan"))
+                    {
+                        if (hargaBarang > 49)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                    else if (namaBarang.Equals("Asem Jawa"))
+                    {
+                        if (hargaBarang > 326)
+                        {
+                            checkTableDisplay[x] = 2;
+                            tanda2++;
+                            tanda3++;
+                        }
+                    }
+                }
+                else
+                {
+                    tanda2++;
+                }
+            }
+        }
+        
+        if(tanda2 == checkTableDisplay.Count && tanda3 != 0)
+        {
+            jalur = 10;
+            tanda = 2;
+        }
 
         while (tanda == 0){
 
@@ -160,6 +277,7 @@ public class NPC_Movement : MonoBehaviour
 
                 if (checkTableDisplay.Count.Equals(0))
                 {
+                   // Debug.Log("masuk 1");
                     tanda = 1;
                     jalur = 10;
                 }
@@ -197,7 +315,6 @@ public class NPC_Movement : MonoBehaviour
                 waypointIndexMAX = 3 - jalur;
                 displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
                 displayTable[jalur].GetComponent<TableInventory>().removeItem();
-                Debug.Log(displayTable[jalur].name);
             }
             else if(jalur == 2 || jalur == 3)
             {
@@ -205,26 +322,13 @@ public class NPC_Movement : MonoBehaviour
                 waypointIndexMAX = 3 - (jalur-2);
                 displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
                 displayTable[jalur].GetComponent<TableInventory>().removeItem();
-                Debug.Log(displayTable[jalur].name);
+            }
+
+            if(tanda == 2)
+            {
+                emote.SetActive(true);
             }
         }
-
-        /*private void Move2()
-        {
-            if (waypointIndex <= waypoints2.Length - 1)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, waypoints2[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
-
-                if (gameObject.transform.position == waypoints2[waypointIndex].transform.position)
-                {
-                    waypointIndex++;
-                }
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }*/
 
     public int getJalur()
     {

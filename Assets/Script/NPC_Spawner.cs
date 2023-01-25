@@ -13,9 +13,9 @@ public class NPC_Spawner : MonoBehaviour
     private GameObject baru;
     private int jalurNPC;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(6))
+        if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(18))
         {
             if (!ea)
             {
@@ -27,6 +27,7 @@ public class NPC_Spawner : MonoBehaviour
                     }
                     else if (jalurNPC != 10)
                     {
+                        Debug.Log("ancok");
                         StartCoroutine(Waiter());
                     }
                 }
@@ -49,6 +50,8 @@ public class NPC_Spawner : MonoBehaviour
         jumlahNPC += 1;
 
         jalurNPC = baru.GetComponent<NPC_Movement>().getJalur();
+
+        Debug.Log(jalurNPC);
 
         yield return new WaitForSeconds(10);
 

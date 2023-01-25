@@ -66,8 +66,7 @@ public class ShopCheck : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         LeanTween.scale(muncul, new Vector3(0, 0), 0.5f).setEaseInElastic();
-        //NPCSpawner.SetActive(true);
-        Debug.Log("harusnya keluar NPC");
+        NPCSpawner.SetActive(true);
     }
 
     public int getMaxPengunjung()
