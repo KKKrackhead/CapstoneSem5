@@ -30,11 +30,13 @@ public class BuyMaster : MonoBehaviour
     {
         if((player.GetComponent<PlayerInteraction>().playerGold - FinalPrice) <= 0 || cariInv.GetComponent<UI_LemariInventory>().inventory.itemList.Count >= 15)
         {
+            Sound.playSound("brokie");
             return;
         }
 
         Debug.Log("Gold Sent = " +FinalPrice);
         GameObject.Find("Player").GetComponent<PlayerInteraction>().PlayerDoBuy(FinalPrice);
+        Sound.playSound("coin");
 
         switch (FinalPrice)
         {
