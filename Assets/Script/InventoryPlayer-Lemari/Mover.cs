@@ -7,26 +7,43 @@ public class Mover : MonoBehaviour
     private Inventory inventoryPlayer;
     private Inventory2 inventoryLemari;
 
+    private int JmlhinventoryPlayer;
+    private int JmlhinventoryLemari;
+
     public void setInventory(Inventory inventory)
     {
         this.inventoryPlayer = inventory;
+        JmlhinventoryPlayer = inventoryPlayer.getJumlahItem();
     }
 
     public void setInventory2(Inventory2 inventory)
     {
         this.inventoryLemari = inventory;
+        JmlhinventoryLemari = inventoryLemari.getJumlahItem();
     }
 
     public void MoveToPlayer(int nomor)
     {
-        inventoryPlayer.AddItem(inventoryLemari.getItem(nomor));
-        inventoryLemari.RemoveItem(nomor);
+        JmlhinventoryPlayer = inventoryPlayer.getJumlahItem();
+        if (JmlhinventoryPlayer < 5)
+        {
+            inventoryPlayer.AddItem(inventoryLemari.getItem(nomor));
+            inventoryLemari.RemoveItem(nomor);
+            JmlhinventoryPlayer++;
+            JmlhinventoryLemari--;
+        }
     }
 
     public void MoveToLemari(int nomor)
     {
-        inventoryLemari.AddItem(inventoryPlayer.getItem(nomor));
-        inventoryPlayer.RemoveItem(nomor);
+        JmlhinventoryLemari = inventoryLemari.getJumlahItem();
+        if (JmlhinventoryLemari < 15)
+        {
+            inventoryLemari.AddItem(inventoryPlayer.getItem(nomor));
+            inventoryPlayer.RemoveItem(nomor);
+            JmlhinventoryPlayer--;
+            JmlhinventoryLemari++;
+        }
     }
 
     public void okButton()

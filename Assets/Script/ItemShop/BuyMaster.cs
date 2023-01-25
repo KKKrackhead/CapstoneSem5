@@ -34,7 +34,6 @@ public class BuyMaster : MonoBehaviour
             return;
         }
 
-        Debug.Log("Gold Sent = " +FinalPrice);
         GameObject.Find("Player").GetComponent<PlayerInteraction>().PlayerDoBuy(FinalPrice);
         Sound.playSound("coin");
 

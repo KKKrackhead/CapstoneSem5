@@ -18,7 +18,6 @@ public class MoveClickLemari : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Lemari");
         move.MoveToPlayer(itemIndex);
     }
 }

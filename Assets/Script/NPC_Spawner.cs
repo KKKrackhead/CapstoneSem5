@@ -10,13 +10,17 @@ public class NPC_Spawner : MonoBehaviour
     private bool ea = false;
     //kurang boolean buat cek jualan udah beres ato gk
     private int jumlahNPC = 0;
-    private GameObject baru;
+    private GameObject baru = null;
     private int jalurNPC;
 
     private void FixedUpdate()
     {
         if (!GameObject.Find("ShopCheck").GetComponent<ShopCheck>().getMinutesReal().Equals(18))
         {
+            if (baru != null)
+            {
+                jalurNPC = baru.GetComponent<NPC_Movement>().getJalur();
+            }
             if (!ea)
             {
                 if (jumlahNPC <= 5)
@@ -53,7 +57,7 @@ public class NPC_Spawner : MonoBehaviour
 
         Debug.Log(jalurNPC);
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
 
         ea = false;
     }
