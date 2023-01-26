@@ -20,6 +20,9 @@ public class NPC_Movement : MonoBehaviour
     private int kasir;
     private int tandain;
     public int jalur = 10;
+
+    public Vector2 moveDirection;
+  
     /*
      0 = atas kanan  
      1 = atas kiri
@@ -28,11 +31,14 @@ public class NPC_Movement : MonoBehaviour
     {
         jalur = 10;
         nentuinJalur();
+        GetComponent<Animator>().SetBool("isWalking", false);
     }
+
 
     private void FixedUpdate()
     {
-        if(jalur == 10)
+        GetComponent<Animator>().SetBool("isWalking", false);
+        if (jalur == 10)
         {
             nentuinJalur();
         }
@@ -63,9 +69,13 @@ public class NPC_Movement : MonoBehaviour
 
     private void Move1()
     {
+        GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, 0);
         if (waypointIndex <= waypoints1.Length - 1)
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             transform.position = Vector2.MoveTowards(transform.position, waypoints1[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+            GetComponent<Animator>().SetBool("isWalking", true);
+
 
             if (gameObject.transform.position == waypoints1[waypointIndex].transform.position)
             {
@@ -81,6 +91,7 @@ public class NPC_Movement : MonoBehaviour
         }
         else
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             Item beli = displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
             buy = new Item(beli);
             displayTable[jalur].GetComponent<TableInventory>().removeItemDisplay();
@@ -92,9 +103,12 @@ public class NPC_Movement : MonoBehaviour
 
     private void Move2()
     {
-        if(waypointIndex <= waypoints3.Length - 1)
+        GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (waypointIndex <= waypoints3.Length - 1)
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             transform.position = Vector2.MoveTowards(transform.position, waypoints3[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+            GetComponent<Animator>().SetBool("isWalking", true);
 
             if(gameObject.transform.position == waypoints3[waypointIndex].transform.position)
             {
@@ -110,6 +124,7 @@ public class NPC_Movement : MonoBehaviour
         }
         else
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             Item beli = displayTable[jalur].GetComponent<TableInventory>().getItemDisplay();
             buy = new Item(beli);
             displayTable[jalur].GetComponent<TableInventory>().removeItemDisplay();
@@ -121,9 +136,12 @@ public class NPC_Movement : MonoBehaviour
 
     private void MoveToCashierFromTop()
     {
+        GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 180, 0);
         if (waypointIndex <= waypoints2.Length - 1)
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             transform.position = Vector2.MoveTowards(transform.position, waypoints2[waypointIndex].transform.position, moveSpeed * Time.deltaTime);
+            GetComponent<Animator>().SetBool("isWalking", true);
 
             if (gameObject.transform.position == waypoints2[waypointIndex].transform.position)
             {
@@ -142,6 +160,7 @@ public class NPC_Movement : MonoBehaviour
     private void nentuinJalur()
     {
         emote.SetActive(false);
+        GetComponent<Animator>().SetBool("isWalking", false);
 
         checkTableDisplay.Clear();
 
