@@ -10,7 +10,6 @@ public class BuyMaster : MonoBehaviour
     public GameObject cariInv;
     public GameObject player;
 
-     
     private int FinalPrice;
     [SerializeField] private Text ReadFinalPrice;
     private string WrittenPrice;

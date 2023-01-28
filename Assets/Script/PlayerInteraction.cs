@@ -23,6 +23,11 @@ public class PlayerInteraction : MonoBehaviour
     public int playerGold;
     private int playerGoldAwal;
 
+    //pause
+    public GameObject NPCspawner;
+    private int flag = 0;
+    public GameObject pauseUI;
+
     private void Awake()
     {
         playerGoldAwal = playerGold;
@@ -53,6 +58,25 @@ public class PlayerInteraction : MonoBehaviour
                 GameObject.Find("ShopCheck").GetComponent<ShopCheck>().layaniPengunjung();
                 uangPlayer.text = "" + playerGold;
                 Debug.Log("player gold sekarang = " + playerGold);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(flag == 0)
+            {
+                flag = 1;
+                NPCspawner.SetActive(false);
+                GameObject.Find("ShopCheck").GetComponent<ShopCheck>().SetTimerRunning(false);
+                gameObject.GetComponent<PlayerMovement>().enabled = false;
+                LeanTween.scale(pauseUI, new Vector3(1f, 1f), 0.5f).setEaseInElastic();
+            }
+            else
+            {
+                flag = 0;
+                NPCspawner.SetActive(true);
+                GameObject.Find("ShopCheck").GetComponent<ShopCheck>().SetTimerRunning(true);
+                gameObject.GetComponent<PlayerMovement>().enabled = true;
+                LeanTween.scale(pauseUI, new Vector3(0f, 0f), 0.5f).setEaseInElastic();
             }
         }
     }

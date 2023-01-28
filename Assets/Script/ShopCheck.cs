@@ -138,7 +138,7 @@ public class ShopCheck : MonoBehaviour
             timeText.text = string.Format("{0:00} {1:00}", minutesGame, secondsGame);
         }
 
-        if(!timerRunning && NPCSpawner.GetComponent<NPC_Spawner>().getJumlahNPC().Equals(0) && tandaUI == 0)
+        if(!timerRunning && NPCSpawner.GetComponent<NPC_Spawner>().getJumlahNPC().Equals(0) && tandaUI == 0 && minutesGame == 18)
         {
             timeText.text = string.Format("{0:00} {1:00}", minutesGame, secondsGame);
             hariUntung.text = "Hari " + harike;

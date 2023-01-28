@@ -11,6 +11,8 @@ public class UI_Inventory : MonoBehaviour
     private Item display = null;
     private int nomor;
     public GameObject hargaBarang;
+    public GameObject itemDisplay;
+    public GameObject namaBarang;
 
     public void setInventory(Inventory inventory)   
     {
@@ -34,8 +36,11 @@ public class UI_Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
         nomor = 0;
-
+        mejaDisplay.SetActive(false);
+        itemDisplay.SetActive(false);
         hargaBarang.SetActive(false);
+        namaBarang.SetActive(false);
+
 
         //int x = 0;
         int y = 0;
@@ -62,9 +67,15 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    itemDisplay.SetActive(true);
                     hargaBarang.SetActive(true);
+                    namaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    itemDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    namaBarang.GetComponent<Text>().text = display.getJeneng();
 
                     hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
@@ -83,9 +94,15 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    itemDisplay.SetActive(true);
                     hargaBarang.SetActive(true);
+                    namaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    itemDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    namaBarang.GetComponent<Text>().text = display.getJeneng();
 
                     hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
@@ -104,9 +121,15 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    itemDisplay.SetActive(true);
                     hargaBarang.SetActive(true);
+                    namaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    itemDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    namaBarang.GetComponent<Text>().text = display.getJeneng();
 
                     hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
@@ -125,9 +148,15 @@ public class UI_Inventory : MonoBehaviour
                 if (display.getHarga() != 0)
                 {
                     mejaDisplay.SetActive(true);
+                    itemDisplay.SetActive(true);
                     hargaBarang.SetActive(true);
+                    namaBarang.SetActive(true);
 
                     mejaDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    itemDisplay.GetComponent<Image>().sprite = display.GetSprite();
+
+                    namaBarang.GetComponent<Text>().text = display.getJeneng();
 
                     hargaBarang.GetComponent<Text>().text = "Harga Barang Sekarang = " + display.getHarga();
                 }
