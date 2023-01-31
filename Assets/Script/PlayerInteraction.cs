@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject NPCspawner;
     private int flag = 0;
     public GameObject pauseUI;
+    public CanvasGroup FadeInFadeOut;
 
     private void Awake()
     {
@@ -132,5 +134,15 @@ public class PlayerInteraction : MonoBehaviour
     public int getMeja()
     {
         return meja;
+    }
+
+    public void MainMenu()
+    {
+        LeanTween.alphaCanvas(FadeInFadeOut, 1f, 2.2f).setOnComplete(lanjut);
+    }
+
+    private void lanjut()
+    {
+        SceneManager.LoadScene(0);
     }
 }

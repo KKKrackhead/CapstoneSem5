@@ -3,6 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BuyMaster
     - ConfirmButtonMejaDisplay
+    - Display
+    - DontDestroy
     - DragDrop
     - Inventory2
     - ItemAsset2
@@ -10,6 +12,7 @@ ScriptsOnlyBuild:
     - ItemAssets
     - ItemPricing
     - ItemSlot
+    - MainMenu
     - MoveClickLemari
     - MoveClickPlayer
     - Mover
@@ -48,6 +51,7 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
+    - TMPro.TMP_Dropdown
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
@@ -70,13 +74,20 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
     - TMPro.KerningTable
     - TMPro.TMP_Character
+    - TMPro.TMP_Dropdown/DropdownEvent
+    - TMPro.TMP_Dropdown/OptionData
+    - TMPro.TMP_Dropdown/OptionDataList
     - TMPro.TMP_FontFeatureTable
     - TMPro.TMP_FontWeightPair
     - TMPro.TMP_GlyphAdjustmentRecord
@@ -103,8 +114,17 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
+    - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: StartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: MainMenu
+    methodName: ExitGame
   - assembly: Assembly-CSharp
     fullTypeName: ShopMaster
     methodName: openShop
@@ -172,6 +192,9 @@ ScriptsOnlyBuild:
     fullTypeName: ItemPricing
     methodName: ChangeIndex
   - assembly: Assembly-CSharp
+    fullTypeName: PlayerInteraction
+    methodName: MainMenu
+  - assembly: Assembly-CSharp
     fullTypeName: PriceSet
     methodName: upArrow
   - assembly: Assembly-CSharp
@@ -197,8 +220,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 61
@@ -209,10 +230,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -220,77 +237,150 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1638}
+      Script: {instanceID: 1618}
     - Class: 114
-      Script: {instanceID: 1782}
+      Script: {instanceID: 1946}
     - Class: 114
-      Script: {instanceID: 1966}
+      Script: {instanceID: 2638}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2884}
     - Class: 114
-      Script: {instanceID: 2886}
+      Script: {instanceID: 3130}
     - Class: 114
-      Script: {instanceID: 3150}
+      Script: {instanceID: 3336}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3492}
     - Class: 114
-      Script: {instanceID: 3512}
+      Script: {instanceID: 4472}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 4632}
     - Class: 114
-      Script: {instanceID: 4800}
+      Script: {instanceID: 5006}
     - Class: 114
-      Script: {instanceID: 5026}
+      Script: {instanceID: 5286}
     - Class: 114
-      Script: {instanceID: 5136}
+      Script: {instanceID: 5418}
     - Class: 114
-      Script: {instanceID: 5306}
+      Script: {instanceID: 5518}
     - Class: 114
-      Script: {instanceID: 5438}
+      Script: {instanceID: 5870}
     - Class: 114
-      Script: {instanceID: 5538}
+      Script: {instanceID: 5890}
     - Class: 114
-      Script: {instanceID: 5910}
+      Script: {instanceID: 6048}
     - Class: 114
-      Script: {instanceID: 6068}
+      Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6114}
+      Script: {instanceID: 6398}
     - Class: 114
-      Script: {instanceID: 6418}
+      Script: {instanceID: 6412}
     - Class: 114
-      Script: {instanceID: 6432}
+      Script: {instanceID: 6796}
     - Class: 114
-      Script: {instanceID: 6816}
+      Script: {instanceID: 6932}
     - Class: 114
-      Script: {instanceID: 6950}
+      Script: {instanceID: 7020}
     - Class: 114
-      Script: {instanceID: 7038}
+      Script: {instanceID: 7442}
     - Class: 114
-      Script: {instanceID: 7460}
+      Script: {instanceID: 7454}
     - Class: 114
-      Script: {instanceID: 7524}
+      Script: {instanceID: 7506}
     - Class: 114
-      Script: {instanceID: 7986}
+      Script: {instanceID: 7614}
     - Class: 114
-      Script: {instanceID: 8366}
+      Script: {instanceID: 7970}
     - Class: 114
-      Script: {instanceID: 8546}
+      Script: {instanceID: 8350}
     - Class: 114
-      Script: {instanceID: 8796}
+      Script: {instanceID: 8530}
     - Class: 114
-      Script: {instanceID: 8980}
+      Script: {instanceID: 8780}
     - Class: 114
-      Script: {instanceID: 9204}
+      Script: {instanceID: 8820}
     - Class: 114
-      Script: {instanceID: 9238}
+      Script: {instanceID: 8964}
     - Class: 114
-      Script: {instanceID: 9334}
+      Script: {instanceID: 9188}
     - Class: 114
-      Script: {instanceID: 9596}
+      Script: {instanceID: 9222}
     - Class: 114
-      Script: {instanceID: 9714}
+      Script: {instanceID: 9318}
+    - Class: 114
+      Script: {instanceID: 9580}
+    - Class: 114
+      Script: {instanceID: 9698}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1618}
+    - Class: 114
+      Script: {instanceID: 1762}
+    - Class: 114
+      Script: {instanceID: 2354}
+    - Class: 114
+      Script: {instanceID: 2866}
+    - Class: 114
+      Script: {instanceID: 3130}
+    - Class: 114
+      Script: {instanceID: 3492}
+    - Class: 114
+      Script: {instanceID: 4780}
+    - Class: 114
+      Script: {instanceID: 5116}
+    - Class: 114
+      Script: {instanceID: 6048}
+    - Class: 114
+      Script: {instanceID: 6796}
+    - Class: 114
+      Script: {instanceID: 6806}
+    - Class: 114
+      Script: {instanceID: 7442}
+    - Class: 114
+      Script: {instanceID: 8134}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1106,6 +1196,12 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: a4728c54d7905264bbb2312221efa647
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
@@ -1200,6 +1296,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GeneralAdvancedTechniques
+  - hash:
+      serializedVersion: 2
+      Hash: 21e09833856b0bc29385f9d2b22a393c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Display
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -1316,7 +1418,7 @@ ScriptsOnlyBuild:
     className: UnityOnScrollRectValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 74893392f60cd42d7412deec7c8281a1
+      Hash: 76a1b90abdd2bb28c65a64b9ce275a7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerInteraction
@@ -1388,7 +1490,7 @@ ScriptsOnlyBuild:
     className: SpriteResolver
   - hash:
       serializedVersion: 2
-      Hash: 2c20cfc7b09d029ceddfbaa238649126
+      Hash: 160fa0e561faa0c2b0fe2906fc801c29
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UI_Inventory
@@ -1562,5 +1664,6 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainLevel.unity
-  playerPath: D:/project/Capstone/Jadi/Opening a Shop.exe
+  playerPath: D:/project/Capstone/Opening a Shop/Opening a Shop.exe

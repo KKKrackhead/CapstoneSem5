@@ -21,7 +21,9 @@ public class Inventory : MonoBehaviour
         {
             AddItem(new Item(Item.ItemType.Weapon, "Golok", 18));
             AddItem(new Item(Item.ItemType.Potion, "Beras Kencur", 8));
-            AddItem(new Item(Item.ItemType.Ingredient, "Asem Jawa", 3));
+            AddItem(new Item(Item.ItemType.Ingredient, "Jahe Merah", 3));
+            AddItem(new Item(Item.ItemType.Ingredient, "Jahe Merah", 3));
+            AddItem(new Item(Item.ItemType.Ingredient, "Jahe Merah", 3));
         }
     }
 
